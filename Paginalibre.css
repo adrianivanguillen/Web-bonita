@@ -1,0 +1,187 @@
+* {
+  margin: 1;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.sidebar:hover {
+    background-color: purple;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:220px 1fr;
+  flex: 1;
+    
+}
+aside {width: 220px;
+  background-color: rgb(0, 173, 0);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar {
+  background-color: rgb(0, 173, 0);
+  text-align: center;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #000000;
+}
+
+
+.main-content {
+  padding: 1rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+
+footer {
+  background-color: #000000;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 80px);
+  gap: 20px;
+  grid-template-areas:
+    "CR CR CR M1 M1 M1 M1 M1 M1"
+    "CR CR CR M1 M1 M1 M1 M1 M1"
+    "CR CR CR M2 M2 M2 M2 M2 M2"
+    "LA LA LA M2 M2 M2 M2 M2 M2"
+    "LA LA LA M2 M2 M2 M2 M2 M2"
+    "LA LA LA M3 M3 M3 M3 M3 M3"
+    "LA LA LA M3 M3 M3 M3 M3 M3";
+}
+
+.canciones-recomendadas { grid-area: CR; }
+.lista-amigos { grid-area: LA; }
+.mix1 { grid-area: M1; }
+.mix2 { grid-area: M2; }
+.mix3 { grid-area: M3; }
+
+
+
+  .project-card {
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: rgb(0, 173, 0);
+}
+
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+
+@media (max-width: 768px) {
+
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "CR"
+      "LA"
+      "M1"
+      "M2"
+      "M3";
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+
+  body {
+    background-color: #111111;
+  }
+
+  header {
+    background-color: #ffcc00;
+    color: #000000;
+  }
+
+  .menu a {
+    color: #000000;
+  }
+
+  aside,
+  .sidebar {
+    background-color: #ffcc00;
+  }
+
+  .sidebar a {
+    color: #000000;
+  }
+
+  .project-card {
+    background-color: #ffcc00;
+    color: #000000;
+  }
+
+  footer {
+    background-color: #ffcc00;
+    color: #000000;
+  }
+
+}
